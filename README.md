@@ -1,7 +1,8 @@
 #DevChallenge	
 
-Grid Module Overview
-Idea is to show  currency pairs in a table with rows for each currency pair, which includes columns for at least the name, the current best bid price, current best ask price, the amount that the best bid last changed, and the amount the best ask price last changed. This data can be read out of the price updates that are sent via stomp. There are a limited number of currency pairs, and multiple updates will be sent for each one. You should request the topic /fx/prices, to receive update messages with a body that looks like this:
+GRID OVERVIEW
+
+You should request the topic /fx/prices, to receive update messages with a body that looks like this:
 {
   "name": "usdjpy",
   "bestBid": 106.7297012204255,
@@ -11,6 +12,10 @@ Idea is to show  currency pairs in a table with rows for each currency pair, whi
   "lastChangeAsk": -4.862314256927661,
   "lastChangeBid": -2.8769211401569663
 }
+
+Idea is to show  currency pairs in a table with rows for each currency pair, which includes columns for at least the name, the current best bid price, current best ask price, the amount that the best bid last changed, and the amount the best ask price last changed. This data can be read out of the price updates that are sent via stomp. There are a limited number of currency pairs, and multiple updates will be sent for each one. 
+
+
 The table should be sorted (and remain sorted) by the column that indicates how much the best bid price last changed (lastChangeBid in the response data).
 Classes
 Classes all written in ES6, to taken advantage of modular approach made Grid Module a standalone component initiate on starting DOM element “grid-view” at index.html.
